@@ -1,3 +1,7 @@
+## This was made by NestJS Crash Course
+	
+<a href="https://www.youtube.com/watch?v=wqhNoDE6pb4" target="_blank">https://www.youtube.com/watch?v=wqhNoDE6pb4</a>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
