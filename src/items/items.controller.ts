@@ -11,27 +11,27 @@ export class ItemsController {
     constructor(private readonly itemsService: ItemsService) {} 
     
     @Get() 
-    async getAll():Promise<Item[]> {
+    getAll():Promise<Item[]> {
        return this.itemsService.getAll();
     }
     
     @Get('/:id')
-    async getOne(@Param('id') id:string):Promise<Item> {
+     getOne(@Param('id') id:string):Promise<Item> {
         return this.itemsService.getOne(id);
     }
 
     @Post('')
-    create(@Body() createItemDto: CreateItemDto): string {
-        return `Created. Name: ${createItemDto.name}, Desc: ${createItemDto.description}, Qty: ${createItemDto.qty}`
+    create(@Body() createItemDto: CreateItemDto): Promise<Item> {
+        return this.itemsService.create(createItemDto);
     }
  
     @Put('/:id')
-    update(@Param('id') id:string, @Body()  updateItemDto: CreateItemDto): string {
-        return `Updating ${id}... Name: ${updateItemDto.name}, Desc: ${updateItemDto.description}, Qty: ${updateItemDto.qty}`
+    update(@Param('id') id:string, @Body()  updateItemDto: CreateItemDto): Promise<Item> {
+        return this.itemsService.update(id, updateItemDto);
     }
 
     @Delete('/:id')
-    delete(@Param('id') id:string):string {
-        return `${id} got deleted`
+    delete(@Param('id') id:string):Promise<Item> {
+        return this.itemsService.delete(id);
     }
 }  
